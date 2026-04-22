@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+  <div class="scroll-bar"></div>
+
+  <nav class="navbar">
+    <a href="#" class="logo">Joseph Bassey</a>
+<ul>
+  <li class="active"><a href="#home">Home</a></li>
+  <li><a href="#about">About</a></li>
+  <li><a href="#portfolio">Portfolio</a></li>
+  <li><a href="#services">Services</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>
+    <div class="menu-icon">
+  <i class='bx bx-menu'></i>
+  </div>
+  </nav>
+
+  <div class="bars-animation">
+    <div class="bar" style="--i:6;"></div>
+    <div class="bar" style="--i:5;"></div>
+    <div class="bar" style="--i:4;"></div>
+    <div class="bar" style="--i:3;"></div>
+    <div class="bar" style="--i:2;"></div>
+    <div class="bar" style="--i:1;"></div>
+  
+  </div>
+  <section class="home" id="home">
+      <div class="home-info">
+      <h1>Joseph Bassey</h1>
+      <h2>I'm a 
+        <span style="--i:4;" data-text="Frontend Developer" >Frontend Developer</span>
+        <span style="--i:3;" data-text="Gamer">Gamer</span>
+        <span style="--i:2;" data-text="Designer">Designer</span>
+        <span style="--i:1;" data-text="YouTuber">YouTuber</span>
+      </h2>
+        <p> 
+          
+          <span style="--i:4;" data-frame="My name is Joseph Bassey, an aspiring frontend developer passionate about building clean and responsive websites.">My name is Joseph Bassey, an aspiring frontend developer passionate about building clean and responsive websites.</span>
+          <span style="--i:3;" data-frame="I enjoy turning ideas into interactive and user-friendly web experiences.">I enjoy turning ideas into interactive and user-friendly web experiences.</span>
+
+          <span style="--i:2;" data-frame="I have a solid foundation in HTML, CSS, and JavaScript,and I’m continuously improving my skil.">I have a solid foundation in HTML, CSS, and JavaScript, 
+          and I’m continuously improving my skils.</span>
+          <span style="--i:1;" data-frame="I’m currently working on projects that challenge me and help me grow as a developer.">I’m currently working on projects that challenge me and help me grow as a developer.</span>
+          
+        </p>
+
+        <div class="btn-sci">
+          <a href="#" class="btn">Download CV</a>
+          <div class="sci">
+              <a href="#"><i class='bx bxl-facebook'></i></a>
+              <a href="#"><i class='bx bxl-instagram'></i></a>
+              <a href="#"><i class='bx bxl-github'></i></a>
+              <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="home-img">
+        <div class="img-box">
+          <div class="img-item">
+            <img src="image/download (2).png" alt="profile pics">
+          </div>
+        </div>
+      </div>
+
+  </section>
+
+  <section class="about" id="about">
+  <h1>About Me</h1>
+  <p>
+    I am Joseph Bassey, a frontend developer passionate about building modern,
+    responsive, and user-friendly websites.
+  </p>
+</section>
+
+<section class="services" id="services">
+  <h1>My Services</h1>
+
+  <div class="service-container">
+    <div class="service-box">
+      <i class='bx bx-code'></i>
+      <h3>Frontend Development</h3>
+      <p>Building responsive websites using HTML, CSS, and JavaScript.</p>
+    </div>
+
+    <div class="service-box">
+      <i class='bx bx-palette'></i>
+      <h3>UI Design</h3>
+      <p>Creating clean and modern user interfaces.</p>
+    </div>
+
+    <div class="service-box">
+      <i class='bx bx-mobile'></i>
+      <h3>Responsive Design</h3>
+      <p>Making websites look great on all devices.</p>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio" id="portfolio">
+  <h1>My Projects</h1>
+  <p>Projects coming soon...</p>
+</section>
+
+<section class="contact" id="contact">
+  <h1>Contact Me</h1>
+
+<form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+
+
+</section>
+
+
+<script>
+  const menuIcon = document.querySelector('.menu-icon');
+  const navLinks = document.querySelector('.navbar ul');
+
+  menuIcon.onclick = () => {
+    navLinks.classList.toggle('active');
+  };
+
+  document.querySelectorAll('.navbar ul li a').forEach(link => {
+    link.onclick = () => {
+      navLinks.classList.remove('active');
+    };
+  });
+
+  function reveal() {
+    const reveals = document.querySelectorAll('.reveal');
+
+    reveals.forEach(el => {
+      const windowHeight = window.innerHeight;
+      const elementTop = el.getBoundingClientRect().top;
+
+      if (elementTop < windowHeight - 100) {
+        el.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', reveal);
+
+  window.onscroll = () => {
+    let scrollTop = document.documentElement.scrollTop;
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let scrolled = (scrollTop / height) * 100;
+
+    document.querySelector(".scroll-bar").style.width = scrolled + "%";
+  };
+
+
+</script>
+
+</body>
+
+</html>
